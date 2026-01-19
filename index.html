@@ -1,1 +1,114 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>College Fight Songs [Geometric Representation]</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    <body>
+        
+        <header>
+            <nav class="navbar">
+            <!-- <div class="dropdown">
+                <button class="dropbtn" aria-label="Menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+                <div class="dropdown-content">
+                    <a href="index.html">Home</a>
+                    <a href="statistics.html">Fight Song Statistics</a>
+                    <a href="about.html">Methodology</a>
+                </div> -->
+            </div>
+        </nav>
+    
+            <h1>College Fight Songs [Geometric Profile]</h1>
+        </header>
 
+        <div class="container">
+        
+        <aside class="sidebar">
+        <div class="weight-category">
+            <label for="filter-select">Filter By:</label>
+            <select id="filter-select" class="weight-input">
+                <option value="default">-- Select Filter --</option>
+                <option value="tempo">BPM (Highest to Lowest)</option>
+                <option value="trope_count">Traditionalism (Tropes)</option>
+                <option value="sec_duration">Song Duration</option>
+                <option value="trope_count_inverse">Originality (inverse of trope count)</option>
+                <option value="oldest">Oldest (year written)</option>
+                <option value="win">Win percentage (0-1.000)</option>
+
+            </select>
+
+
+
+            <button class="calc-btn" id="calculate-trigger">UPDATE LIST</button>
+
+        </div>
+
+        <hr style="width:100%; border:0; border-top:1px solid #eee; margin: 10px 0;">
+
+        
+
+
+        <div class = "side-nav">
+       <!-- <button class = "other-btn" id="second-page-button"> <a href="by_the_numbers.html">BY THE NUMBERS</a> </button>
+        <button class="other-btn" id="third-page-button"><a href="correlations.html">CORRELATIONS</a></button> -->
+        </div>
+
+
+
+        </aside>
+
+            <main class="main-content">
+                <!-- height: 300px; margin-top: 10px; -->
+                <div id="graph-container" style="">
+                        <canvas id="sidebarChart"></canvas>
+                </div>
+
+                <div class="leaderboard" id= "leaderboard_id">
+                    
+                    <div class="school-card">
+                        <div class="rank">#?</div>
+                        <div class="logo-placeholder">Logo</div>
+                        <div class="school-info">
+                            <p class="school-name">School</p>
+                            <p class="song-details">"Song name" • X BPM • Tropes: ?</p>
+                        </div>
+                        <div class="score-badge">???</div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
+        <script src="backend.js"></script>
+        <script>
+           display_chart = chartUI(chart);
+            schools = document.getElementsByClassName("school-card");
+            calculate_button.addEventListener('click', () => {
+    
+    filta = document.getElementById("filter-select").value;
+    console.log("assigned to : " + filta);
+    calculate(filta);
+
+});
+
+window.addEventListener('scroll', function() {
+    const container = document.getElementById('graph-container');
+    container.classList.toggle('scrolling', window.scrollY > 0);
+});
+        
+        </script>
+        <script>
+
+
+        </script>
+    </body>
+    </html>
