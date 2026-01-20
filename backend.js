@@ -137,11 +137,26 @@ const school_colors = {
     "Wake Forest": "rgba(158, 126, 56, 0.7)"
 };
 
+
+
+
+
+
 // console.log("HELLO WORLD")
 data_dummy = {};
 // 1. Convert the CSV text into an Array of Objects
 schoolDataObjects = $.csv.toObjects(school_data);
 // console.log(schoolDataObjects);
+
+function preloadAllLogos() {
+    console.log("Starting image preloading...");
+    schoolDataObjects.forEach(school => {
+        const img = new Image();
+        const url = `/${getSchoolUrl(school.school)}`;
+        img.src = url;
+    });
+}
+preloadAllLogos();
 filter = 'default';
 const insert_space = document.getElementById("leaderboard_id"); // where the html will be appended
 leaderboard = $('#leaderboard_id')
