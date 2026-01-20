@@ -170,6 +170,7 @@ data_in = {
                 datasets: [{
                     label: label_value,
                     data: dataValues,
+                    
                     backgroundColor: [
                         'rgba(255, 255, 255, 0.9)',
                         'rgba(255, 255, 255, 0.9)',
@@ -666,6 +667,12 @@ function chartUI(ctx){
                     r: { // 'r' is the radial scale
                     max: 1,
                     beginAtZero: true,
+                    pointLabels: {
+                    color: 'white', // This makes "BPM", "Tropes", etc. white
+                    font: {
+                        size: 14
+                    }
+                },
                     ticks: {    
                         showLabelBackdrop: false, // Ensure this is true
                         backdropColor: 'rgb(238, 238, 238)', // Change to your desired color (e.g., yellow)
